@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    --color-brand-primary: #8b3a3a;
+    --color-brand-secondary: #c98a4b;
+    --color-brand-cream: #faf6f0;
+    --color-brand-sand: #f3ece2;
+    --color-brand-dark: #221c1a;
+    --color-brand-sage: #50674d;
+    --color-brand-terracotta: #b85d43;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+}
+
+.font-serif {
+    font-family: var(--font-serif);
+}
+
+.bg-cream-pattern {
+    background-color: #faf7f2;
+    background-image: radial-gradient(#e2d9cd 0.65px, transparent 0.65px);
+    background-size: 16px 16px;
+}
