@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    <!-- The 13 Handcrafted Expressions (Complete Artisanal Portfolio) -->
+    <!-- The 13 Handcrafted Expressions (Complete Artisanal Portfolio Carousel) -->
     @php
         $artisanEditions = [
             ['name' => 'Bathrobes', 'slug' => 'bathrobes', 'tagline' => 'Pure Waffle & Kimono Robes', 'price' => 'From ₹2,499', 'image' => 'images/products/bathrobe-botanical.jpg'],
@@ -131,60 +131,131 @@
             ['name' => 'Comforters', 'slug' => 'comforters', 'tagline' => 'Kantha Razais & Quilts', 'price' => 'From ₹2,999', 'image' => 'images/products/quilt-gulaal-magenta.jpg'],
         ];
     @endphp
-    <section class="py-12 sm:py-20 bg-[#FAF7F2] border-t border-[#ede6dc]">
+    <section class="py-12 sm:py-20 bg-[#FAF7F2] border-t border-[#ede6dc] relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+            <!-- Carousel Section Header with Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 sm:gap-6">
                 <div>
-                    <span class="text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.24em] sm:tracking-[0.28em] text-[#8c7b6c] font-semibold">The Complete Atelier Portfolio</span>
-                    <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-stone-900 mt-1.5 sm:mt-2">The 13 Handcrafted Editions</h2>
-                    <div class="w-8 sm:w-10 h-0.5 bg-[#8b3a3a] mt-3 sm:mt-4 mb-2 sm:mb-3"></div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#ede6dc] rounded-full shadow-2xs mb-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                        <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-[#8c7b6c] font-semibold">13 Handcrafted Editions</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-stone-900 mt-1">The 13 Handcrafted Editions</h2>
+                    <div class="w-8 sm:w-10 h-0.5 bg-[#8b3a3a] mt-3 mb-2"></div>
                     <p class="text-xs sm:text-sm text-stone-500 font-light max-w-2xl leading-relaxed">
-                        Every single textile is carved from Sheesham teak, hand-dipped in mineral dyes, and stamped with slow artisan devotion in our Sanganer workshop.
+                        Swipe through every artisanal line — carved from Sheesham teak, hand-dipped in mineral dyes, and stamped with generational devotion in Jaipur.
                     </p>
                 </div>
-                <div class="flex items-center">
-                    <a href="{{ route('shop.index') }}" class="inline-flex items-center gap-2 text-xs font-semibold text-[#8b3a3a] hover:text-[#a14444] uppercase tracking-[0.16em] transition group">
-                        <span>Explore Full Catalog</span>
+                
+                <!-- Desktop & Tablet Carousel Arrows & Link -->
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-2">
+                        <button 
+                            type="button" 
+                            onclick="slideEditions('left')" 
+                            aria-label="Previous Editions"
+                            class="w-10 h-10 rounded-full border border-[#ede6dc] bg-white text-stone-800 hover:bg-[#141210] hover:text-[#FAF7F2] hover:border-[#141210] flex items-center justify-center transition shadow-2xs hover:scale-105 active:scale-95 cursor-pointer"
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button 
+                            type="button" 
+                            onclick="slideEditions('right')" 
+                            aria-label="Next Editions"
+                            class="w-10 h-10 rounded-full border border-[#ede6dc] bg-white text-stone-800 hover:bg-[#141210] hover:text-[#FAF7F2] hover:border-[#141210] flex items-center justify-center transition shadow-2xs hover:scale-105 active:scale-95 cursor-pointer"
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <a href="{{ route('shop.index') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8b3a3a] hover:text-[#a14444] uppercase tracking-[0.16em] transition group ml-2">
+                        <span class="hidden sm:inline">Explore Full Catalog</span>
+                        <span class="sm:hidden">All</span>
                         <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </a>
                 </div>
             </div>
 
-            <!-- 13 Categories Gallery Grid with Staggered Scroll Reveal -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-5">
-                @foreach($artisanEditions as $idx => $edition)
-                    <a 
-                        href="{{ route('shop.category', $edition['slug']) }}" 
-                        class="group bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-[#ede6dc] shadow-2xs hover:shadow-xl hover:border-amber-900/30 transition-all duration-300 flex flex-col justify-between reveal-on-scroll"
-                        data-delay="{{ ($idx % 6) * 50 + 50 }}"
-                    >
-                        <div class="relative rounded-lg sm:rounded-xl overflow-hidden aspect-4/5 bg-stone-100 mb-2 sm:mb-3 luxury-image-sheen">
-                            <img 
-                                src="{{ asset($edition['image']) }}" 
-                                alt="{{ $edition['name'] }}" 
-                                class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
-                                loading="lazy"
-                            >
-                            <!-- Edition Number Badge -->
-                            <div class="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 bg-stone-900/80 backdrop-blur-xs text-amber-200 text-[8px] sm:text-[9px] font-semibold px-1.5 sm:px-2 py-0.5 rounded-full uppercase tracking-wider">
-                                {{ str_pad($idx + 1, 2, '0', STR_PAD_LEFT) }} / 13
-                            </div>
-                        </div>
+            <!-- Carousel Track Container -->
+            <div class="relative group/carousel">
+                <!-- Floating Side Arrow Buttons (Desktop) -->
+                <button 
+                    type="button" 
+                    onclick="slideEditions('left')" 
+                    aria-label="Previous Editions"
+                    class="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 backdrop-blur-md border border-[#ede6dc] text-stone-800 hover:bg-[#141210] hover:text-white hover:border-[#141210] shadow-xl items-center justify-center transition opacity-0 group-hover/carousel:opacity-100 hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button 
+                    type="button" 
+                    onclick="slideEditions('right')" 
+                    aria-label="Next Editions"
+                    class="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 backdrop-blur-md border border-[#ede6dc] text-stone-800 hover:bg-[#141210] hover:text-white hover:border-[#141210] shadow-xl items-center justify-center transition opacity-0 group-hover/carousel:opacity-100 hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
 
-                        <div class="space-y-0.5 sm:space-y-1">
-                            <h3 class="font-serif text-sm sm:text-base font-normal text-stone-900 group-hover:text-amber-950 transition line-clamp-1">
-                                {{ $edition['name'] }}
-                            </h3>
-                            <p class="text-[10px] sm:text-[11px] text-stone-500 font-light line-clamp-1">
-                                {{ $edition['tagline'] }}
-                            </p>
-                            <div class="pt-1 flex items-center justify-between text-xs">
-                                <span class="font-serif text-amber-900 font-medium text-[11px] sm:text-xs">{{ $edition['price'] }}</span>
-                                <span class="text-[9px] sm:text-[10px] text-stone-400 uppercase tracking-wider group-hover:text-amber-900 group-hover:translate-x-0.5 transition-all">Shop →</span>
+                <!-- The Horizontal Carousel Slider Track -->
+                <div 
+                    id="editions-carousel" 
+                    class="flex gap-4 sm:gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory py-4 px-1 hide-scrollbar cursor-grab active:cursor-grabbing select-none"
+                >
+                    @foreach($artisanEditions as $idx => $edition)
+                        <a 
+                            href="{{ route('shop.category', $edition['slug']) }}" 
+                            class="group flex-none w-[66vw] sm:w-[42vw] md:w-[30vw] lg:w-[220px] xl:w-[240px] snap-start bg-white rounded-2xl p-3 sm:p-3.5 border border-[#ede6dc] shadow-2xs hover:shadow-xl hover:border-amber-900/30 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 reveal-on-scroll"
+                            data-delay="{{ ($idx % 5) * 50 + 50 }}"
+                        >
+                            <div class="relative rounded-xl overflow-hidden aspect-4/5 bg-stone-100 mb-3 luxury-image-sheen">
+                                <img 
+                                    src="{{ asset($edition['image']) }}" 
+                                    alt="{{ $edition['name'] }}" 
+                                    class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                                    loading="lazy"
+                                >
+                                <!-- Edition Number Badge -->
+                                <div class="absolute top-2 left-2 bg-stone-900/85 backdrop-blur-xs text-amber-200 text-[8.5px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider border border-amber-900/40 shadow-xs">
+                                    {{ str_pad($idx + 1, 2, '0', STR_PAD_LEFT) }} / 13
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                @endforeach
+
+                            <div class="space-y-1">
+                                <h3 class="font-serif text-base font-normal text-stone-900 group-hover:text-amber-950 transition line-clamp-1">
+                                    {{ $edition['name'] }}
+                                </h3>
+                                <p class="text-[11px] text-stone-500 font-light line-clamp-1">
+                                    {{ $edition['tagline'] }}
+                                </p>
+                                <div class="pt-2 flex items-center justify-between text-xs border-t border-[#f4ede4] mt-2">
+                                    <span class="font-serif text-amber-900 font-medium text-xs">{{ $edition['price'] }}</span>
+                                    <span class="text-[10px] text-stone-400 uppercase tracking-wider group-hover:text-amber-900 group-hover:translate-x-0.5 transition-all font-medium">Shop →</span>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Carousel Progress Bar & Swipe Indicators -->
+            <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 max-w-md mx-auto sm:max-w-none pt-2">
+                <div class="flex items-center gap-3 w-full sm:w-72">
+                    <div class="h-1 bg-[#ede6dc] rounded-full flex-1 overflow-hidden">
+                        <div id="editions-progress-bar" class="h-full bg-amber-900 rounded-full transition-all duration-150" style="width: 20%"></div>
+                    </div>
+                    <span id="editions-counter" class="text-[11px] font-mono text-[#8c7b6c] shrink-0 font-medium">01 / 13</span>
+                </div>
+                <div class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-light flex items-center gap-1.5">
+                    <span>Swipe or click arrows to explore editions</span>
+                </div>
             </div>
         </div>
     </section>

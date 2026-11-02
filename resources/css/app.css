@@ -189,3 +189,12 @@ html {
     transform-style: preserve-3d;
     will-change: transform;
 }
+
+/* Hide scrollbar for carousel */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

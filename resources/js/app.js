@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAtelierCanvas();
     init3DTilt();
     initMarqueeTicker();
+    initEditionsCarousel();
 });
 
 /**
@@ -280,4 +281,88 @@ function initMarqueeTicker() {
     // Duplicate ticker children for seamless infinite scroll
     const items = marquee.innerHTML;
     marquee.innerHTML += items;
+}
+
+/**
+ * 6. The 13 Handcrafted Editions Carousel Engine
+ */
+window.slideEditions = function(direction) {
+    const carousel = document.getElementById('editions-carousel');
+    if (!carousel) return;
+
+    const card = carousel.querySelector('a');
+    const cardWidth = card ? card.offsetWidth + 20 : 260;
+    const scrollAmount = direction === 'left' ? -cardWidth * 2 : cardWidth * 2;
+
+    carousel.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+};
+
+function initEditionsCarousel() {
+    const carousel = document.getElementById('editions-carousel');
+    if (!carousel) return;
+
+    const progressBar = document.getElementById('editions-progress-bar');
+    const counter = document.getElementById('editions-counter');
+
+    // Update Progress Bar & Counter on Scroll
+    function updateProgress() {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        if (maxScroll <= 0) return;
+
+        const ratio = carousel.scrollLeft / maxScroll;
+        const pct = Math.min(100, Math.max(15, Math.round(ratio * 85) + 15));
+        if (progressBar) progressBar.style.width = pct + '%';
+
+        const activeIndex = Math.min(13, Math.max(1, Math.round(ratio * 12) + 1));
+        if (counter) counter.innerText = `${String(activeIndex).padStart(2, '0')} / 13`;
+    }
+
+    carousel.addEventListener('scroll', updateProgress, { passive: true });
+
+    // Drag-to-Scroll Momentum
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let hasDragged = false;
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        hasDragged = false;
+        carousel.classList.add('cursor-grabbing');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        carousel.classList.remove('cursor-grabbing');
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('cursor-grabbing');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.4;
+        if (Math.abs(walk) > 6) hasDragged = true;
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Prevent accidental navigation when dragging
+    carousel.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (hasDragged) {
+                e.preventDefault();
+                hasDragged = false;
+            }
+        });
+    });
 }
