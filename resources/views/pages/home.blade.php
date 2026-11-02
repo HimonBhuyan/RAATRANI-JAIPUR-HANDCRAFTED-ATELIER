@@ -642,7 +642,7 @@
             <div class="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
                 <div>
                     <div class="flex items-center gap-2">
-                        <img src="{{ asset('images/brand/logo.png') }}" alt="Raatrani" class="w-6 h-6 rounded-full border border-amber-300">
+                        <img src="{{ asset('images/brand/logo.svg') }}" alt="Raatrani" class="w-6 h-6 rounded-full shadow-2xs">
                         <span class="text-[10.5px] uppercase tracking-[0.25em] text-[#8c7b6c] font-semibold">@the_raatrani on Instagram</span>
                     </div>
                     <h2 class="font-serif text-3xl font-normal text-stone-900 mt-1">Living the Handcrafted Story</h2>

@@ -8,6 +8,9 @@
     <title>{{ $title ?? 'Raatrani | Atelier Jaipur • Handcrafted Luxury & Living' }}</title>
     <meta name="description" content="Raatrani brings Jaipur's timeless hand block printing to life. 100% pure cotton bathrobes, quilts, bedsheets, diwan sets, rugs, and quilted bags crafted with slow artisan devotion.">
 
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/brand/logo.svg') }}">
+    <link rel="alternate icon" href="{{ asset('images/brand/logo.png') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -97,7 +100,7 @@
                 <div class="flex flex-col items-center justify-center text-center px-1 shrink min-w-0">
                     <a href="{{ route('home') }}" class="group flex flex-col items-center">
                         <div class="flex items-center gap-1.5 sm:gap-2.5">
-                            <img src="{{ asset('images/brand/logo.png') }}" alt="Raatrani Emblem" class="w-7 h-7 sm:w-10 sm:h-10 rounded-full border border-amber-300/70 shadow-2xs group-hover:scale-105 transition-transform shrink-0">
+                            <img src="{{ asset('images/brand/logo.svg') }}" alt="Raatrani Emblem" class="w-8 h-8 sm:w-11 sm:h-11 rounded-full shadow-xs group-hover:scale-105 transition-transform shrink-0">
                             <span class="font-serif text-base sm:text-2xl md:text-3xl lg:text-4xl font-normal tracking-[0.15em] sm:tracking-[0.24em] text-stone-900 group-hover:text-amber-950 transition whitespace-nowrap">RAATRANI</span>
                         </div>
                         <span class="text-[7px] sm:text-[9px] uppercase tracking-[0.16em] sm:tracking-[0.34em] text-[#8c7b6c] font-medium mt-0.5 whitespace-nowrap">
@@ -442,7 +445,7 @@
         <div class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-[#FAF7F2] shadow-2xl flex flex-col p-6 overflow-y-auto">
             <div class="flex items-center justify-between pb-5 border-b border-[#ede6dc]">
                 <div class="flex items-center gap-2.5">
-                    <img src="{{ asset('images/brand/logo.png') }}" alt="Raatrani" class="w-10 h-10 rounded-full border border-amber-300">
+                    <img src="{{ asset('images/brand/logo.svg') }}" alt="Raatrani" class="w-10 h-10 rounded-full shadow-xs">
                     <div class="flex flex-col">
                         <span class="font-serif text-xl font-normal tracking-[0.2em] text-stone-900">RAATRANI</span>
                         <span class="text-[8px] uppercase tracking-widest text-[#8c7b6c]">JAIPUR ATELIER</span>
@@ -524,7 +527,7 @@
                 <!-- Brand Bio & Contact -->
                 <div class="lg:col-span-2 space-y-5">
                     <div class="flex items-center gap-3">
-                        <img src="{{ asset('images/brand/logo.png') }}" alt="Raatrani" class="w-12 h-12 rounded-full border border-amber-300/40">
+                        <img src="{{ asset('images/brand/logo.svg') }}" alt="Raatrani" class="w-12 h-12 rounded-full shadow-xs">
                         <div>
                             <span class="font-serif text-2xl font-normal tracking-[0.24em] text-white">RAATRANI</span>
                             <p class="text-[9px] text-[#c98a4b] tracking-[0.3em] uppercase">Atelier Jaipur • Est. 2026</p>

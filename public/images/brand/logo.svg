@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Rich Jaipur Royal Gold Radial Gradient -->
+    <radialGradient id="royalGoldGrad" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#FDF0C8" />
+      <stop offset="25%" stop-color="#F2D183" />
+      <stop offset="60%" stop-color="#DCAB47" />
+      <stop offset="88%" stop-color="#B88026" />
+      <stop offset="100%" stop-color="#8E5E14" />
+    </radialGradient>
+
+    <!-- Metallic Outer Bezel Gradient -->
+    <linearGradient id="bezelGrad" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#FFF5D6" />
+      <stop offset="30%" stop-color="#E2B75E" />
+      <stop offset="50%" stop-color="#9C6B1C" />
+      <stop offset="75%" stop-color="#F5D78B" />
+      <stop offset="100%" stop-color="#734B0F" />
+    </linearGradient>
+
+    <!-- Subtle Petal Shadow -->
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#422C0A" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Outer Bezel Ring -->
+  <circle cx="300" cy="300" r="290" fill="url(#bezelGrad)" stroke="#5E3C0B" stroke-width="2" />
+  
+  <!-- Main Medallion Face -->
+  <circle cx="300" cy="300" r="275" fill="url(#royalGoldGrad)" />
+
+  <!-- Concentric Royal Rings -->
+  <circle cx="300" cy="300" r="265" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="1.5" />
+  <circle cx="300" cy="300" r="258" fill="none" stroke="#684714" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="3 4" />
+
+  <!-- 24 Ornamental Beaded Filigree Accents along outer ring -->
+  <g fill="#FFFFFF" fill-opacity="0.7">
+    <circle cx="300" cy="46" r="3" />
+    <circle cx="365" cy="55" r="2.5" />
+    <circle cx="426" cy="80" r="2.5" />
+    <circle cx="479" cy="121" r="2.5" />
+    <circle cx="520" cy="174" r="2.5" />
+    <circle cx="545" cy="235" r="2.5" />
+    <circle cx="554" cy="300" r="3" />
+    <circle cx="545" cy="365" r="2.5" />
+    <circle cx="520" cy="426" r="2.5" />
+    <circle cx="479" cy="479" r="2.5" />
+    <circle cx="426" cy="520" r="2.5" />
+    <circle cx="365" cy="545" r="2.5" />
+    <circle cx="300" cy="554" r="3" />
+    <circle cx="235" cy="545" r="2.5" />
+    <circle cx="174" cy="520" r="2.5" />
+    <circle cx="121" cy="479" r="2.5" />
+    <circle cx="80" cy="426" r="2.5" />
+    <circle cx="55" cy="365" r="2.5" />
+    <circle cx="46" cy="300" r="3" />
+    <circle cx="55" cy="235" r="2.5" />
+    <circle cx="80" cy="174" r="2.5" />
+    <circle cx="121" cy="121" r="2.5" />
+    <circle cx="174" cy="80" r="2.5" />
+    <circle cx="235" cy="55" r="2.5" />
+  </g>
+
+  <!-- Central Botanical Motif: Night-Blooming Jasmine (Raatrani) -->
+  <g filter="url(#softShadow)">
+
+    <!-- Stems (Warm Antique Bronze) -->
+    <!-- Main stem -->
+    <path d="M300 420 C300 370, 300 320, 300 240" fill="none" stroke="#483313" stroke-width="3.5" stroke-linecap="round" />
+    <!-- Branch Left -->
+    <path d="M300 350 C280 320, 245 285, 215 255" fill="none" stroke="#483313" stroke-width="2.8" stroke-linecap="round" />
+    <!-- Branch Right -->
+    <path d="M300 335 C320 305, 355 275, 385 245" fill="none" stroke="#483313" stroke-width="2.8" stroke-linecap="round" />
+    <!-- Upper Left Twig -->
+    <path d="M300 275 C285 245, 260 220, 245 195" fill="none" stroke="#483313" stroke-width="2.2" stroke-linecap="round" />
+    <!-- Upper Right Twig -->
+    <path d="M300 265 C315 235, 340 210, 355 185" fill="none" stroke="#483313" stroke-width="2.2" stroke-linecap="round" />
+
+    <!-- Organic Teak Woodblock Leaves (Ivory Fill, Fine Teak Linework) -->
+    <!-- Lower Left Leaf -->
+    <path d="M280 340 C240 345, 205 315, 210 290 C235 305, 265 325, 280 340 Z" fill="#FFFDF8" stroke="#483313" stroke-width="1.8" />
+    <path d="M228 300 C245 312, 260 325, 275 336" fill="none" stroke="#483313" stroke-width="0.9" />
+
+    <!-- Lower Right Leaf -->
+    <path d="M320 325 C360 330, 395 300, 390 275 C365 290, 335 310, 320 325 Z" fill="#FFFDF8" stroke="#483313" stroke-width="1.8" />
+    <path d="M372 285 C355 297, 340 310, 325 321" fill="none" stroke="#483313" stroke-width="0.9" />
+
+    <!-- Mid Left Leaf -->
+    <path d="M288 270 C260 260, 230 230, 238 210 C258 225, 278 250, 288 270 Z" fill="#FFFDF8" stroke="#483313" stroke-width="1.6" />
+    <!-- Mid Right Leaf -->
+    <path d="M312 255 C340 245, 370 215, 362 195 C342 210, 322 235, 312 255 Z" fill="#FFFDF8" stroke="#483313" stroke-width="1.6" />
+
+    <!-- Top Left Bud -->
+    <g transform="translate(245, 195) rotate(-28)">
+      <path d="M0 0 C-4 -12, 0 -22, 0 -22 C0 -22, 4 -12, 0 0 Z" fill="#FFFDF8" stroke="#483313" stroke-width="1.2" />
+      <path d="M-2 -5 C0 -14, 2 -14, 0 0" fill="none" stroke="#483313" stroke-width="0.7" />
+    </g>
+    <!-- Top Right Bud -->
+    <g transform="translate(355, 185) rotate(28)">
+      <path d="M0 0 C-4 -12, 0 -22, 0 -22 C0 -22, 4 -12, 0 0 Z" fill="#FFFDF8" stroke="#483313" stroke-width="1.2" />
+      <path d="M-2 -5 C0 -14, 2 -14, 0 0" fill="none" stroke="#483313" stroke-width="0.7" />
+    </g>
+
+    <!-- Top Main Jasmine Blossom (5 Elegant Curved Petals) -->
+    <g transform="translate(300, 168)">
+      <!-- Petal 1 (North) -->
+      <path d="M0 0 C-8 -18, -12 -36, 0 -44 C12 -36, 8 -18, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.5" />
+      <path d="M0 -10 L0 -38" fill="none" stroke="#C29A38" stroke-width="0.8" />
+      <!-- Petal 2 (East-North-East) -->
+      <path d="M0 0 C16 -12, 34 -15, 42 -4 C36 8, 18 8, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.5" />
+      <path d="M10 -4 L36 -4" fill="none" stroke="#C29A38" stroke-width="0.8" />
+      <!-- Petal 3 (South-East) -->
+      <path d="M0 0 C14 14, 26 28, 26 40 C14 36, 4 20, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.5" />
+      <!-- Petal 4 (South-West) -->
+      <path d="M0 0 C-4 20, -14 36, -26 40 C-26 28, -14 14, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.5" />
+      <!-- Petal 5 (West-North-West) -->
+      <path d="M0 0 C-18 8, -36 8, -42 -4 C-34 -15, -16 -12, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.5" />
+      <path d="M-10 -4 L-36 -4" fill="none" stroke="#C29A38" stroke-width="0.8" />
+      <!-- Golden Core -->
+      <circle cx="0" cy="0" r="5.5" fill="#E8B83D" stroke="#483313" stroke-width="1.2" />
+      <circle cx="0" cy="0" r="2.5" fill="#754E0C" />
+    </g>
+
+    <!-- Left Blooming Flower -->
+    <g transform="translate(205, 245) rotate(-22)">
+      <path d="M0 0 C-7 -15, -10 -30, 0 -38 C10 -30, 7 -15, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C14 -10, 30 -13, 36 -3 C31 7, 15 7, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C12 12, 22 24, 22 34 C12 31, 3 17, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C-3 17, -12 31, -22 34 C-22 24, -12 12, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C-15 7, -31 7, -36 -3 C-30 -13, -14 -10, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <circle cx="0" cy="0" r="4.8" fill="#E8B83D" stroke="#483313" stroke-width="1.1" />
+      <circle cx="0" cy="0" r="2" fill="#754E0C" />
+    </g>
+
+    <!-- Right Blooming Flower -->
+    <g transform="translate(395, 235) rotate(22)">
+      <path d="M0 0 C-7 -15, -10 -30, 0 -38 C10 -30, 7 -15, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C14 -10, 30 -13, 36 -3 C31 7, 15 7, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C12 12, 22 24, 22 34 C12 31, 3 17, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C-3 17, -12 31, -22 34 C-22 24, -12 12, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <path d="M0 0 C-15 7, -31 7, -36 -3 C-30 -13, -14 -10, 0 0 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.4" />
+      <circle cx="0" cy="0" r="4.8" fill="#E8B83D" stroke="#483313" stroke-width="1.1" />
+      <circle cx="0" cy="0" r="2" fill="#754E0C" />
+    </g>
+
+    <!-- Atelier Base Ribbon Bow -->
+    <g transform="translate(300, 415)">
+      <path d="M-22 18 C-34 32, -42 45, -50 62 C-30 50, -12 35, 0 20 C12 35, 30 50, 50 62 C42 45, 34 32, 22 18 Z" fill="#FFFDF9" stroke="#483313" stroke-width="1.6" />
+      <ellipse cx="0" cy="18" rx="7" ry="5" fill="#E8B83D" stroke="#483313" stroke-width="1.3" />
+    </g>
+
+  </g>
+
+  <!-- Royal Brand Wordmark at Bottom -->
+  <g text-anchor="middle">
+    <!-- Brand Name RAATRANI -->
+    <text x="300" y="475" font-family="'Cinzel', 'Playfair Display', 'Baskerville', 'Times New Roman', serif" font-size="34" font-weight="700" letter-spacing="10" fill="#2D1C06">RAATRANI</text>
+    
+    <!-- Subtitle: JAIPUR • ATELIER -->
+    <text x="300" y="504" font-family="'Instrument Sans', -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="6" fill="#5E3F10" opacity="0.95">JAIPUR • HANDCRAFTED</text>
+  </g>
+
+</svg>

@@ -58,7 +58,7 @@
 
         <!-- Section 3: Instagram & Direct Connect -->
         <div class="text-center space-y-4 max-w-xl mx-auto">
-            <img src="{{ asset('images/brand/logo.png') }}" alt="Raatrani" class="w-16 h-16 rounded-full mx-auto shadow-sm">
+            <img src="{{ asset('images/brand/logo.svg') }}" alt="Raatrani" class="w-16 h-16 rounded-full mx-auto shadow-sm">
             <h3 class="font-serif text-2xl font-bold text-stone-900">Follow Our Journey</h3>
             <p class="text-xs text-stone-600">
                 Join our Instagram community <strong class="text-stone-900">@the_raatrani</strong> or converse directly with our studio founders on WhatsApp.

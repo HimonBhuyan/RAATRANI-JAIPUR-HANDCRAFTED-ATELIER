@@ -21,7 +21,7 @@
             <div>
                 <!-- Brand in Admin -->
                 <div class="p-6 border-b border-stone-800 flex items-center gap-3">
-                    <img src="{{ asset('images/brand/logo.png') }}" alt="Raatrani" class="w-10 h-10 rounded-full border border-amber-500/40">
+                    <img src="{{ asset('images/brand/logo.svg') }}" alt="Raatrani" class="w-10 h-10 rounded-full shadow-xs">
                     <div>
                         <span class="font-serif text-xl font-bold tracking-wider text-white">RAATRANI</span>
                         <span class="block text-[10px] text-amber-400 font-mono tracking-widest uppercase">Admin Portal</span>
