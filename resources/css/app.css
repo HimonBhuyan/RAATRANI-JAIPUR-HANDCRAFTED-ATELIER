@@ -27,8 +27,165 @@ html {
     font-family: var(--font-serif);
 }
 
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+::-webkit-scrollbar-track {
+    background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+    background: #d8cebe;
+    border-radius: 9999px;
+    border: 2px solid #FAF7F2;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9b4b3b;
+}
+
+/* Ambient Cursor Spotlight Glow */
+#ambient-glow-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 550px;
+    margin-left: -275px;
+    margin-top: -275px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.14) 0%, rgba(139, 58, 58, 0.05) 38%, transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+    transform: translate3d(-1000px, -1000px, 0);
+    will-change: transform;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+@media (pointer: coarse) {
+    #ambient-glow-cursor {
+        display: none !important;
+    }
+}
+
+/* Atelier Interactive Background Canvas */
+#atelier-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+/* Subtle Linen Texture Pattern */
 .bg-cream-pattern {
     background-color: #faf7f2;
     background-image: radial-gradient(#e2d9cd 0.65px, transparent 0.65px);
     background-size: 16px 16px;
+}
+
+/* Keyframe Animations */
+@keyframes floatGentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+@keyframes floatReverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(7px) rotate(-1.5deg); }
+}
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+}
+@keyframes marqueeSlow {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-float-slow {
+    animation: floatGentle 7s ease-in-out infinite;
+}
+.animate-float-reverse {
+    animation: floatReverse 8.5s ease-in-out infinite;
+}
+.animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+.animate-marquee-smooth {
+    display: flex;
+    width: max-content;
+    animation: marqueeSlow 35s linear infinite;
+}
+.animate-marquee-smooth:hover {
+    animation-play-state: paused;
+}
+
+/* Scroll Reveal Animation Classes */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-on-scroll[data-delay="100"] { transition-delay: 0.1s; }
+.reveal-on-scroll[data-delay="150"] { transition-delay: 0.15s; }
+.reveal-on-scroll[data-delay="200"] { transition-delay: 0.2s; }
+.reveal-on-scroll[data-delay="250"] { transition-delay: 0.25s; }
+.reveal-on-scroll[data-delay="300"] { transition-delay: 0.3s; }
+.reveal-on-scroll[data-delay="400"] { transition-delay: 0.4s; }
+
+/* Scale Reveal */
+.scale-on-scroll {
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+.scale-on-scroll.is-revealed {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Luxury Image Sheen Hover Effect */
+.luxury-image-sheen {
+    position: relative;
+    overflow: hidden;
+}
+.luxury-image-sheen::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 35%,
+        rgba(255, 255, 255, 0.22) 50%,
+        rgba(255, 255, 255, 0) 65%
+    );
+    transform: translateX(-100%) rotate(25deg);
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 10;
+}
+.luxury-image-sheen:hover::after {
+    transform: translateX(100%) rotate(25deg);
+}
+
+/* 3D Tilt Card Container */
+.perspective-1000 {
+    perspective: 1000px;
+}
+.tilt-element {
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
 }

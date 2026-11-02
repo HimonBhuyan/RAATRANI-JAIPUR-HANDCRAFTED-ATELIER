@@ -10,7 +10,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
                 <!-- Hero Left: The Editorial Story -->
-                <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+                <div class="lg:col-span-7 space-y-7 text-center lg:text-left reveal-on-scroll">
                     
                     <!-- Delicate Heritage Kicker -->
                     <div class="inline-flex items-center gap-2.5 px-4 py-1.5 bg-white/90 border border-[#e2d9cd] rounded-full shadow-2xs">
@@ -58,13 +58,13 @@
                 </div>
 
                 <!-- Hero Right: High-Fashion Editorial Lookbook Montage -->
-                <div class="lg:col-span-5 relative">
+                <div class="lg:col-span-5 relative reveal-on-scroll" data-delay="150">
                     
                     <!-- Decorative Golden Frame Accent -->
                     <div class="absolute -top-4 -right-4 w-full h-full border border-amber-300/40 rounded-3xl -z-10 hidden sm:block"></div>
 
-                    <!-- Primary Hero Portrait: The Waffle Kimono Robe -->
-                    <div class="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-[#ede6dc]">
+                    <!-- Primary Hero Portrait: The Waffle Kimono Robe with 3D Tilt -->
+                    <div class="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-[#ede6dc] luxury-image-sheen" data-tilt>
                         <div class="aspect-4/5 w-full overflow-hidden bg-[#f4eee6]">
                             <img 
                                 src="{{ asset('images/products/bathrobe-botanical.jpg') }}" 
@@ -89,15 +89,15 @@
                         </div>
 
                         <!-- Floating Circular Artisan Seal -->
-                        <div class="absolute top-4 right-4 w-16 h-16 rounded-full bg-[#141210]/90 text-white backdrop-blur-xs flex flex-col items-center justify-center text-center p-1 border border-amber-300/50 shadow-md">
+                        <div class="absolute top-4 right-4 w-16 h-16 rounded-full bg-[#141210]/90 text-white backdrop-blur-xs flex flex-col items-center justify-center text-center p-1 border border-amber-300/50 shadow-md group-hover:rotate-12 transition-transform duration-500">
                             <span class="text-[7.5px] uppercase tracking-widest text-amber-200 font-bold leading-tight">JAIPUR</span>
                             <span class="text-[6.5px] tracking-wider text-stone-300">BLOCK</span>
                             <span class="text-[6.5px] tracking-wider text-stone-300">PRINTED</span>
                         </div>
                     </div>
 
-                    <!-- Offset Accent Floating Thumbnail: Quilted Cotton Jacket -->
-                    <div class="hidden sm:block absolute -bottom-8 -left-8 w-44 bg-white p-2 rounded-2xl shadow-xl border border-[#ede6dc] transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+                    <!-- Offset Accent Floating Thumbnail: Quilted Cotton Jacket with Gentle Float -->
+                    <div class="hidden sm:block absolute -bottom-8 -left-8 w-44 bg-white p-2 rounded-2xl shadow-xl border border-[#ede6dc] animate-float-slow hover:pause transition-transform duration-300">
                         <div class="aspect-square rounded-xl overflow-hidden bg-stone-100 mb-2">
                             <img src="{{ asset('images/products/jacket-quilted-pink.jpg') }}" alt="Quilted Jacket" class="w-full h-full object-cover">
                         </div>
@@ -150,14 +150,15 @@
                 </div>
             </div>
 
-            <!-- 13 Categories Gallery Grid -->
+            <!-- 13 Categories Gallery Grid with Staggered Scroll Reveal -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-5">
                 @foreach($artisanEditions as $idx => $edition)
                     <a 
                         href="{{ route('shop.category', $edition['slug']) }}" 
-                        class="group bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-[#ede6dc] shadow-2xs hover:shadow-xl hover:border-amber-900/30 transition-all duration-300 flex flex-col justify-between"
+                        class="group bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-[#ede6dc] shadow-2xs hover:shadow-xl hover:border-amber-900/30 transition-all duration-300 flex flex-col justify-between reveal-on-scroll"
+                        data-delay="{{ ($idx % 6) * 50 + 50 }}"
                     >
-                        <div class="relative rounded-lg sm:rounded-xl overflow-hidden aspect-4/5 bg-stone-100 mb-2 sm:mb-3">
+                        <div class="relative rounded-lg sm:rounded-xl overflow-hidden aspect-4/5 bg-stone-100 mb-2 sm:mb-3 luxury-image-sheen">
                             <img 
                                 src="{{ asset($edition['image']) }}" 
                                 alt="{{ $edition['name'] }}" 
@@ -188,26 +189,27 @@
         </div>
     </section>
 
-    <!-- Luxury Craft Ticker Ribbon -->
-    <div class="bg-white border-b border-[#ede6dc] py-4 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center justify-center md:justify-between gap-6 text-[10.5px] uppercase tracking-[0.2em] text-[#8c7b6c] font-medium text-center">
-                <span class="flex items-center gap-2">
-                    <span class="text-amber-700">✦</span> Sanganer Craftmark Certified
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="text-amber-700">✦</span> 100% Breathable Combed Cotton
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="text-amber-700">✦</span> Complimentary Express Courier > ₹1,999
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="text-amber-700">✦</span> WhatsApp Personal Styling Concierge
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="text-amber-700">✦</span> 7-Day Doorstep Exchange Guarantee
-                </span>
-            </div>
+    <!-- Luxury Craft Ticker Ribbon (Infinite Seamless Glide) -->
+    <div class="bg-white border-b border-[#ede6dc] py-3.5 overflow-hidden">
+        <div class="animate-marquee-smooth flex items-center gap-12 text-[10.5px] uppercase tracking-[0.2em] text-[#8c7b6c] font-medium whitespace-nowrap">
+            <span class="flex items-center gap-2">
+                <span class="text-amber-700">✦</span> Sanganer Craftmark Certified
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="text-amber-700">✦</span> 100% Breathable Combed Cotton
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="text-amber-700">✦</span> Complimentary Express Courier > ₹1,999
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="text-amber-700">✦</span> WhatsApp Personal Styling Concierge (+91 89469 66292)
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="text-amber-700">✦</span> 7-Day Doorstep Exchange Guarantee
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="text-amber-700">✦</span> Authentic Teak Woodblock Printing
+            </span>
         </div>
     </div>
 
@@ -226,7 +228,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Sanctuary 1: The Morning Ritual -->
-                <a href="{{ route('shop.category', 'clothing-robes') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6">
+                <a href="{{ route('shop.category', 'clothing-robes') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6 reveal-on-scroll luxury-image-sheen" data-delay="100">
                     <img 
                         src="{{ asset('images/products/bathrobe-cypress.jpg') }}" 
                         alt="Kimono Bathrobes" 
@@ -247,7 +249,7 @@
                 </a>
 
                 <!-- Sanctuary 2: The Royal Bedchamber -->
-                <a href="{{ route('shop.category', 'bedsheets-linen') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6">
+                <a href="{{ route('shop.category', 'bedsheets-linen') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6 reveal-on-scroll luxury-image-sheen" data-delay="200">
                     <img 
                         src="{{ asset('images/products/bedsheet-padma-blue.jpg') }}" 
                         alt="Hand Block Bedsheets" 
@@ -268,7 +270,7 @@
                 </a>
 
                 <!-- Sanctuary 3: The Twilight Slumber -->
-                <a href="{{ route('shop.category', 'dohars-quilts') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6">
+                <a href="{{ route('shop.category', 'dohars-quilts') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6 reveal-on-scroll luxury-image-sheen" data-delay="300">
                     <img 
                         src="{{ asset('images/products/quilt-gulaal-magenta.jpg') }}" 
                         alt="Reversible Dohars and Quilts" 
@@ -289,7 +291,7 @@
                 </a>
 
                 <!-- Sanctuary 4: The Wanderer's Trunk -->
-                <a href="{{ route('shop.category', 'bags-accessories') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6">
+                <a href="{{ route('shop.category', 'bags-accessories') }}" class="group relative rounded-3xl overflow-hidden aspect-3/4 bg-white border border-[#ede6dc] shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end p-6 reveal-on-scroll luxury-image-sheen" data-delay="400">
                     <img 
                         src="{{ asset('images/products/tote-set-jungle-emerald.jpg') }}" 
                         alt="Quilted Travel Totes" 
@@ -410,7 +412,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             
             <!-- Gulaal Ghar Collection Banner -->
-            <div class="relative rounded-3xl overflow-hidden bg-[#141210] text-[#FAF7F2] shadow-2xl border border-amber-900/30">
+            <div class="relative rounded-3xl overflow-hidden bg-[#141210] text-[#FAF7F2] shadow-2xl border border-amber-900/30 scale-on-scroll">
                 <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
                     <div class="lg:col-span-6 p-8 sm:p-14 space-y-5">
                         <span class="text-[10px] uppercase font-bold tracking-[0.25em] text-amber-300">Festive Kantha Edition</span>
@@ -430,8 +432,12 @@
                         </div>
                     </div>
                     <div class="lg:col-span-6 grid grid-cols-2 gap-3 p-5 bg-[#1b1715]">
-                        <img src="{{ asset('images/products/quilt-gulaal-magenta.jpg') }}" alt="Gulaal Magenta" class="w-full aspect-4/5 object-cover rounded-2xl shadow-sm">
-                        <img src="{{ asset('images/products/quilt-gulaal-yellow.jpg') }}" alt="Gulaal Yellow" class="w-full aspect-4/5 object-cover rounded-2xl shadow-sm">
+                        <div class="relative overflow-hidden rounded-2xl luxury-image-sheen">
+                            <img src="{{ asset('images/products/quilt-gulaal-magenta.jpg') }}" alt="Gulaal Magenta" class="w-full aspect-4/5 object-cover rounded-2xl shadow-sm hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl luxury-image-sheen">
+                            <img src="{{ asset('images/products/quilt-gulaal-yellow.jpg') }}" alt="Gulaal Yellow" class="w-full aspect-4/5 object-cover rounded-2xl shadow-sm hover:scale-105 transition-transform duration-700">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -439,8 +445,8 @@
             <!-- Padma Bloom & Jungle Haven Dual Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Padma Bloom Card -->
-                <div class="relative rounded-3xl overflow-hidden bg-[#FAF7F2] border border-[#ede6dc] p-8 group">
-                    <div class="aspect-16/10 rounded-2xl overflow-hidden bg-stone-100 mb-6 shadow-sm">
+                <div class="relative rounded-3xl overflow-hidden bg-[#FAF7F2] border border-[#ede6dc] p-8 group reveal-on-scroll" data-delay="100">
+                    <div class="aspect-16/10 rounded-2xl overflow-hidden bg-stone-100 mb-6 shadow-sm luxury-image-sheen">
                         <img src="{{ asset('images/products/bedsheet-padma-blue.jpg') }}" alt="Padma Bloom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8b3a3a]">Slow Botanical Bedding</span>
@@ -454,8 +460,8 @@
                 </div>
 
                 <!-- Jungle Haven Totes Card -->
-                <div class="relative rounded-3xl overflow-hidden bg-[#FAF7F2] border border-[#ede6dc] p-8 group">
-                    <div class="aspect-16/10 rounded-2xl overflow-hidden bg-stone-100 mb-6 shadow-sm">
+                <div class="relative rounded-3xl overflow-hidden bg-[#FAF7F2] border border-[#ede6dc] p-8 group reveal-on-scroll" data-delay="200">
+                    <div class="aspect-16/10 rounded-2xl overflow-hidden bg-stone-100 mb-6 shadow-sm luxury-image-sheen">
                         <img src="{{ asset('images/products/tote-set-jungle-emerald.jpg') }}" alt="Jungle Haven" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8b3a3a]">4-Piece Travel Organizers</span>
@@ -586,8 +592,8 @@
                         'bathrobe-poolside.jpg',
                     ];
                 @endphp
-                @foreach($instaImages as $img)
-                    <a href="https://instagram.com/the_raatrani" target="_blank" class="group relative rounded-2xl overflow-hidden aspect-square bg-stone-100 border border-[#ede6dc] shadow-2xs">
+                @foreach($instaImages as $idx => $img)
+                    <a href="https://instagram.com/the_raatrani" target="_blank" class="group relative rounded-2xl overflow-hidden aspect-square bg-stone-100 border border-[#ede6dc] shadow-2xs reveal-on-scroll luxury-image-sheen" data-delay="{{ ($idx % 6) * 60 + 50 }}">
                         <img 
                             src="{{ asset('images/products/' . $img) }}" 
                             alt="Raatrani Living" 

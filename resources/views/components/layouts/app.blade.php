@@ -14,7 +14,26 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-[#FAF7F2] text-[#2c2623] flex flex-col min-h-full font-sans antialiased selection:bg-amber-100 selection:text-amber-900">
+<body class="bg-[#FAF7F2] text-[#2c2623] flex flex-col min-h-full font-sans antialiased selection:bg-amber-100 selection:text-amber-900 relative">
+
+    <!-- Interactive Background Canvas (Jaipur Floating Petals & Gold Dust) -->
+    <canvas id="atelier-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    <!-- Interactive Ambient Cursor Spotlight Glow -->
+    <div id="ambient-glow-cursor" class="pointer-events-none"></div>
+
+    <!-- Floating Background Artisanal Watermark Motifs -->
+    <div class="fixed top-1/4 -left-16 w-80 h-80 opacity-[0.035] pointer-events-none z-0 animate-float-slow hidden md:block">
+        <svg viewBox="0 0 200 200" fill="currentColor" class="text-stone-900 w-full h-full">
+            <path d="M100 10 C100 60, 40 80, 40 130 C40 160, 65 185, 100 185 C135 185, 160 160, 160 130 C160 80, 100 60, 100 10 Z" />
+            <path d="M100 40 C90 70, 60 90, 60 120 C60 145, 80 165, 100 165 C120 165, 140 145, 140 120 C140 90, 110 70, 100 40 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </div>
+    <div class="fixed bottom-1/4 -right-16 w-96 h-96 opacity-[0.03] pointer-events-none z-0 animate-float-reverse hidden md:block">
+        <svg viewBox="0 0 200 200" fill="currentColor" class="text-amber-900 w-full h-full">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <path d="M100 25 C110 65, 145 80, 175 100 C145 120, 110 135, 100 175 C90 135, 55 120, 25 100 C55 80, 90 65, 100 25 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </div>
 
     <!-- Top Luxury Announcement Ribbon -->
     <div class="bg-[#141210] text-[#e8ded3] text-[10.5px] tracking-[0.16em] uppercase py-2.5 px-4 border-b border-[#28221d]">

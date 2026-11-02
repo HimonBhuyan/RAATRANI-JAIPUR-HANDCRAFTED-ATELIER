@@ -8,9 +8,9 @@
     $waText = "Hello Raatrani! I would like to order: " . $product->name . " (SKU: " . $product->sku . ", Price: ₹" . number_format($product->price, 2) . "). Please confirm availability.";
 @endphp
 
-<div class="group relative flex flex-col bg-white rounded-2xl border border-[#ede6dc] overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+<div class="group relative flex flex-col bg-white rounded-2xl border border-[#ede6dc] overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 reveal-on-scroll">
     <!-- Image & Badges Container -->
-    <div class="relative aspect-3/4 w-full bg-[#f8f5ef] overflow-hidden">
+    <div class="relative aspect-3/4 w-full bg-[#f8f5ef] overflow-hidden luxury-image-sheen">
         <a href="{{ route('shop.product', $product->slug) }}" class="block w-full h-full">
             <img 
                 src="{{ asset($product->primary_image) }}" 
