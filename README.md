@@ -101,6 +101,33 @@ Open **[http://localhost:8000](http://localhost:8000)** in your browser.
 
 ---
 
+## ✦ Deploying to Vercel (1-Click Ready)
+
+This repository is fully configured for zero-configuration serverless deployment on **[Vercel](https://vercel.com)**:
+- **Serverless Entrypoint**: `api/index.php` with automated `/tmp` writable storage and pre-seeded SQLite database initialization.
+- **Vercel Config**: `vercel.json` with `vercel-php@0.7.4` runtime and static asset routing for `/build` and `/images`.
+- **Pre-Compiled Assets**: Vite production bundles and all 70+ product photographs are pre-built and committed.
+
+### Quick Deployment Steps:
+1. Push this repository to GitHub (or import [`HimonBhuyan/RAATRANI-JAIPUR-HANDCRAFTED-ATELIER`](https://github.com/HimonBhuyan/RAATRANI-JAIPUR-HANDCRAFTED-ATELIER)).
+2. Go to **[vercel.com/new](https://vercel.com/new)** and import the repository.
+3. In the Vercel Project Settings:
+   - **Framework Preset**: *Other*
+   - **Root Directory**: `./`
+4. Add the following **Environment Variables** in Vercel:
+   | Key | Value |
+   | --- | --- |
+   | `APP_KEY` | `base64:FjdM+obaXLV1MsxxAj03AeRp7ssyd66tGrm6kOaKZZU=` |
+   | `APP_URL` | `https://your-project.vercel.app` (your Vercel domain) |
+   | `APP_NAME` | `Raatrani Atelier` |
+   | `APP_ENV` | `production` |
+   | `APP_DEBUG` | `false` |
+5. Click **Deploy**. Your luxury store is live in seconds!
+
+*Note: For high-concurrency production databases, simply add `DB_CONNECTION=pgsql` or `mysql` and your external connection strings in Vercel's Environment Variables dashboard.*
+
+---
+
 ## ✦ Test Credentials
 
 ### Admin Portal
