@@ -32,6 +32,8 @@
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
+    "APP_KEY": "base64:BinFK8X+YLIW9Qv6TRjtSBvERMeIvNNFQWBX+EptkQM=",
+    "APP_STORAGE": "/tmp/storage",
     "APP_CONFIG_CACHE": "/tmp/storage/framework/cache/config.php",
     "APP_EVENTS_CACHE": "/tmp/storage/framework/cache/events.php",
     "APP_PACKAGES_CACHE": "/tmp/storage/framework/cache/packages.php",
@@ -43,4 +45,3 @@
     "LOG_CHANNEL": "stderr"
   }
 }
-
